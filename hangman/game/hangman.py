@@ -1,7 +1,7 @@
 class Hangman:
     def __init__(self):
-        self._pole = ["_________", "|","|","|","|","|","|_____" ]
-        self._person = [ "|", "0", "/ | \\", "/ \\" ]
+        self._pole = ["_________", "    |", "    |"]
+        self._person = ["    |", "    0", "  / | \\", "   / \\"]
 
     def display_pole(self):
         for i in self._pole:
@@ -15,11 +15,12 @@ class Hangman:
         self._person.pop(0)
 
 
-
-#hangman = ([ _________
-      #  |       |
-      #  |       0
-      #  |     / | \
-      #  |      / \
-      #  |
-      #  |_____ ])
+# hangman = ([ 
+#    _________
+#        |
+#        |
+#        |
+#        0
+#      / | \
+#       / \
+#  ])

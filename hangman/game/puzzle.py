@@ -2,15 +2,14 @@ from terminal_service import TerminalService
 from hangman import Hangman
 import random
 
-
-
 class Puzzle:
 
     def __init__(self):
 
         self.terminal_service = TerminalService()
         self._hangman = Hangman()
-        self._word_list = ["Zimbabwe", "South Africa",  "Botswana", ]
+        #self._words = Words()
+        self._word_list = ["Zimbabwe", "South Africa", "Botswana", "Namibia", "Tanzania", "Zambia"]
         self._picked_word = ""
         self._word = []
         self._blank_word = []
@@ -30,7 +29,7 @@ class Puzzle:
 
     def letter(self):   #randomly picking letters of the secret word
 
-        guess = self.terminal_service.read_letter("Guess a letter [a-z]: ")
+        guess = self.terminal_service.read_letter("Pick a letter between [a-z]: ")
         
 
         if len(guess) == 1 and guess.isalpha():  # guessing the letter
