@@ -1,11 +1,13 @@
-class Hangman:
-    def __init__(self):
-        self._pole = ["_________", "    |", "    |"]
-        self._person = ["    |", "    0", "  / | \\", "   / \\"]
+from pole import Pole
 
-    def display_pole(self):
-        for i in self._pole:
-            print(i)
+class Hangman(Pole):
+    def __init__(self):
+        #self._pole = ["_________",]
+        self._person = [ "    |", "    |", "    |", "    0", "  / | \\", "   / \\"]
+
+    #def display_pole(self):
+        #for i in self._pole:
+         #   print(i)
 
     def display_person(self):
         for i in self._person:

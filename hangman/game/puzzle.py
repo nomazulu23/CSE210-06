@@ -1,5 +1,6 @@
 from terminal_service import TerminalService
 from hangman import Hangman
+from pole import Pole
 import random
 
 class Puzzle:
@@ -8,6 +9,7 @@ class Puzzle:
 
         self.terminal_service = TerminalService()
         self._hangman = Hangman()
+        self._pole = Pole()
         #self._words = Words()
         self._word_list = ["Zimbabwe", "South Africa", "Botswana", "Namibia", "Tanzania", "Zambia"]
         self._picked_word = ""
@@ -39,22 +41,25 @@ class Puzzle:
                     if guess == self._word[i]:
                         self._blank_word[i] = self._word[i]
                 print("".join(self._blank_word))
-                self._hangman.display_pole()
+                #self._hangman.display_pole()
                 self._hangman.display_person()
+                self._pole.display_pole()
 
 
             else:
-                if len(self._hangman._pole) > 0:
+                #if len(self._hangman._pole) > 0:
+                if self._hangman and self._pole == 0:
                     self._hangman.cut_line()
                     self._guessed_letters.append(guess)
                     print("".join(self._blank_word))
-                    self._hangman.display_pole()
+                    self._pole.display_pole() #self._hangman.display_pole()
                     self._hangman.display_person()
+                    
 
         else:
 
-            self._hangman.display_pole()
-
+            #self._hangman.display_pole()
+            self._pole.display_pole()
             self._hangman.display_person()
             print(self._guessed_word)
 
@@ -66,7 +71,7 @@ class Puzzle:
             print("You win! Congrats!")
             self._validate = 1
 
-        elif len(self._hangman._pole) == 0:
+        elif self._hangman and self._pole == 0:
             self._hangman._person[0] = "   X"
             print("You lose! Game Over")
             self._validate = 2
