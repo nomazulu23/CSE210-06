@@ -5,5 +5,6 @@ class Pole():
         self._pole = ["_________"]
         
     def display_pole(self):
+        #return self._pole
         for i in self._pole:
-            print(i)
+            print (i)

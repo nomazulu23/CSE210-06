@@ -7,7 +7,7 @@ class Hangman(Pole):
 
     #def display_pole(self):
         #for i in self._pole:
-         #   print(i)
+          #print(i)
 
     def display_person(self):
         for i in self._person:
